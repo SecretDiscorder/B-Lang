@@ -3,6 +3,8 @@ import os
 import math
 from decimal import Decimal, getcontext
 import time
+import sys
+sys.setrecursionlimit(10000)
 #######################################
 # CONSTANTS
 #######################################
