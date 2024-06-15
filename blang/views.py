@@ -240,7 +240,7 @@ def index(request):
 
     except Exception as e:
         # Handle specific exceptions if needed
-        print(f"An error occurred: {e.as_string()}")
-        output_result = f"An error occurred: {e.as_string()}"
+        print(f"An error occurred: {e}")
+        output_result = f"An error occurred: {e}"
 
     return render(request, 'index.html', {'output_result': output_result, 'output': output})
