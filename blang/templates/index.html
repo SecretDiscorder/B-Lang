@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.1.2/tinymce.min.js" integrity="sha512-2T0G/zn88pKqnmUStXKW0BSPIW3Y2sky5Bl6HER5TwPGqCsLTVzAQRZMum/ptf5mRwYylP1lcvnLkgn6chASuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	
-    <style>
-        body, a {
+	<title></title>
+	<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.1.2/tinymce.min.js" integrity="sha512-2T0G/zn88pKqnmUStXKW0BSPIW3Y2sky5Bl6HER5TwPGqCsLTVzAQRZMum/ptf5mRwYylP1lcvnLkgn6chASuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<style type="text/css">body, a {
             margin: 0;
             padding: 0;
             color: white;
@@ -115,38 +113,39 @@
             background-color: darkblue;
             transform: scale(1.05);
         }
-    </style>
+	</style>
 </head>
 <body>
-	<button><a href="./kalkulator">Kalkulator Presisi</a></button>
-    <h1>Blang Programming</h1>
-    <p>main.blang</p>
-    <form method="post">
-        {% csrf_token %}
-        <div class="code-container">
-            <div class="textarea-container">
-                <!-- Tambahkan id pada textarea -->
-                <textarea name="input_code" id="tinymce-container" oninput="updateLineNumbers()">CETAK("HALLO DUNIA")</textarea>
-            </div>
-        </div>
-        <br>
-        <button type="submit">Run Code</button>
-    </form>
-    <div class="code-container">
-        <div class="textarea-container">
-            <!-- Tampilkan output jika ada -->
-            {% if output_result %}
-                <div class="output">
-                    <label>Output:</label>
-                    <pre>{{ output }}</pre>
-                    <!-- Gunakan tag pre untuk mempertahankan format teks -->
-                    <pre>{{ output_result }}</pre>
-                </div>
-            {% endif %}
-        </div>
-    </div>
+<p><button>Kalkulator Presisi</button></p>
 
-    <script>
+<h1>Blang Programming</h1>
+
+<p>main.blang</p>
+
+<form method="post">{% csrf_token %}
+<div class="code-container">
+<div class="textarea-container"><!-- Tambahkan id pada textarea --><textarea id="tinymce-container" name="input_code" oninput="updateLineNumbers()">CETAK(&quot;HALLO DUNIA&quot;)</textarea></div>
+</div>
+<br />
+<button type="submit">Run Code</button></form>
+
+<div class="code-container">
+<div class="textarea-container">
+<p style="text-align: left;"><!-- Tampilkan output jika ada -->{% if output_result %}</p>
+
+<div class="output">
+<p style="text-align: left;"><label>Output:</label></p>
+
+<pre style="text-align: left;">
+{{ output }}</pre>
+<!-- Gunakan tag pre untuk mempertahankan format teks -->
+
+<pre style="text-align: left;">
+{{ output_result }}</pre>
+</div>
+{% endif %}</div>
+</div>
+<script>
         tinymce.init({
             selector: '#tinymce-container',
             height: 300,
@@ -184,6 +183,5 @@
         }
         // Call the function initially to set up line numbers
         updateLineNumbers();
-    </script>
-</body>
+    </script></body>
 </html>
