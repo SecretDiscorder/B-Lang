@@ -6,6 +6,7 @@ from . import shell
 from bs4 import BeautifulSoup
 from io import StringIO
 import sys
+sys.setrecursionlimit(10000)
 from decimal import Decimal, getcontext
 import mpmath
 import roman
